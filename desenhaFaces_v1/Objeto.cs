@@ -8,6 +8,7 @@ using System.Diagnostics; // para usar o Debug
 using System.Drawing; //para usar a pen e o brush
 using System.IO; //para usar as streams
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using metodosMatriz3D; //implementa a classe Matriz3D
@@ -409,9 +410,7 @@ namespace desenhaFaces_v1
         {
             ArrayList faces = new ArrayList();
             int k = 0;
-
-
-
+            Console.WriteLine(numvPorFace);
             for (int i = 0; i < numvPorFace.Count; i++)
             {
                 Face f = new Face();
@@ -430,11 +429,11 @@ namespace desenhaFaces_v1
             //bubble sort
 
             int n = faces.Count;
-            bool swapped;
+            bool trocou;
 
             for (int i = 0; i < n - 1; i++)
             {
-                swapped = false;
+                trocou = false;
 
                 for (int j = 0; j < n - i - 1; j++)
                 {
@@ -447,12 +446,11 @@ namespace desenhaFaces_v1
                         faces[j] = face2;
                         faces[j + 1] = face1;
 
-                        swapped = true;
+                        trocou = true;
                     }
                 }
 
-                // Se não houve trocas na iteração, o array já está ordenado
-                if (!swapped)
+                if (!trocou)
                     break;
             }
 
@@ -508,40 +506,90 @@ namespace desenhaFaces_v1
 
             while (linha != null)
             {
-                linha = readerObjeto.ReadLine(); // Lê uma linha de caracteres da stream atual e retorna os dados como uma string 
+                linha = readerObjeto.ReadLine();
                 if (linha != null)
                 {
-                    if (linha.StartsWith("v"))
+                    if (linha.StartsWith("v ") && !linha.StartsWith("vt") && !linha.StartsWith("vn"))
+                    {
+                        Console.WriteLine(linha);
                         pontos.Add(linha);
-                    if (linha.StartsWith("f"))
-                        indices.Add(linha);
-                }
+                    }
 
+
+                    if (linha.StartsWith("f"))
+                    {
+                        string[] coordenadasSemEspaco = linha.Split(' ');
+                        string novaLinha = "f";
+                        bool comecaEmZero;
+
+                        if (int.Parse(coordenadasSemEspaco[1].Split('/')[0]) != 0)
+                        {
+                            comecaEmZero = true;
+                        }
+                        else
+                        {
+                            comecaEmZero= false;
+                        }
+
+                        for (int i = 1; i < coordenadasSemEspaco.Length; i++)
+                        {
+                            string[] coordenadasSemTraco = coordenadasSemEspaco[i].Split('/');
+                            int index = int.Parse(coordenadasSemTraco[0]);
+
+                            if (comecaEmZero)
+                            {
+                                index -= 1; 
+                            }
+                            novaLinha += " " + index;
+                        }
+
+                        Console.WriteLine(novaLinha);
+                        indices.Add(novaLinha);
+                    }
+                }
             }
+
             readerObjeto.Close();
 
             // extrair as coordenadas individuais dos vértices das linhas guardadas nos arraylist
 
             char[] separador = { ' ' }; // definir o separador: caractere espaço
+
             string[] coordenadas;
+
             foreach (string l in pontos)
             {
                 coordenadas = l.Split(separador);
+                //Console.WriteLine("estou a adicionar o vetor3d dos pontos" + coordenadas[0] + " " + coordenadas[1] + " " + coordenadas[2] + " " + coordenadas[3]);
                 this.vertices.Add(new Vector3D(float.Parse(coordenadas[1], System.Globalization.CultureInfo.InvariantCulture), float.Parse(coordenadas[2], System.Globalization.CultureInfo.InvariantCulture), float.Parse(coordenadas[3], System.Globalization.CultureInfo.InvariantCulture)));
             }
 
             // extrair os índices das faces, das linhas guardadas nos arraylist
+            Console.WriteLine(indices.Count);
 
             string[] indicesVertices;
             foreach (string l in indices)
             {
+                Console.WriteLine(l);
                 indicesVertices = l.Split(separador);
                 this.numvPorFace.Add(indicesVertices.Length - 1); //adicionar o nº de vértices/indices por face
+
+                Console.WriteLine(indicesVertices.Length - 1);
                 for (int i = 1; i < indicesVertices.Length; i++)
                 {
                     this.indicesFaces.Add(int.Parse(indicesVertices[i]));
                 }
             }
+
+            Console.WriteLine($"Vértices carregados: {vertices.Count}");
+            foreach (Vector3D v in vertices)
+            {
+                Console.WriteLine($"Vértice: {v}");
+            }
+
+            Console.WriteLine($"numvPorFace: {string.Join(", ", numvPorFace.Cast<int>())}");
+            Console.WriteLine($"indicesFaces: {string.Join(", ", indicesFaces.Cast<int>())}");
+
 
         }
 

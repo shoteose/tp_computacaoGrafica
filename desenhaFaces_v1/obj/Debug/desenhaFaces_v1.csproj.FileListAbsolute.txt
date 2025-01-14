@@ -9,3 +9,14 @@ C:\Users\joao-\Desktop\desenhaFaces_2425_v2\desenhaFaces_v1\obj\Debug\desenhaFac
 C:\Users\joao-\Desktop\desenhaFaces_2425_v2\desenhaFaces_v1\obj\Debug\desenhaF.FB3CF23C.Up2Date
 C:\Users\joao-\Desktop\desenhaFaces_2425_v2\desenhaFaces_v1\obj\Debug\desenhaFaces_v1.exe
 C:\Users\joao-\Desktop\desenhaFaces_2425_v2\desenhaFaces_v1\obj\Debug\desenhaFaces_v1.pdb
+C:\xampp\htdocs\tp_computacaoGrafica\desenhaFaces_v1\bin\Debug\desenhaFaces_v1.exe.config
+C:\xampp\htdocs\tp_computacaoGrafica\desenhaFaces_v1\bin\Debug\desenhaFaces_v1.exe
+C:\xampp\htdocs\tp_computacaoGrafica\desenhaFaces_v1\bin\Debug\desenhaFaces_v1.pdb
+C:\xampp\htdocs\tp_computacaoGrafica\desenhaFaces_v1\obj\Debug\desenhaFaces_v1.csproj.AssemblyReference.cache
+C:\xampp\htdocs\tp_computacaoGrafica\desenhaFaces_v1\obj\Debug\desenhaFaces_v1.Form1.resources
+C:\xampp\htdocs\tp_computacaoGrafica\desenhaFaces_v1\obj\Debug\desenhaFaces_v1.Properties.Resources.resources
+C:\xampp\htdocs\tp_computacaoGrafica\desenhaFaces_v1\obj\Debug\desenhaFaces_v1.csproj.GenerateResource.cache
+C:\xampp\htdocs\tp_computacaoGrafica\desenhaFaces_v1\obj\Debug\desenhaFaces_v1.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\tp_computacaoGrafica\desenhaFaces_v1\obj\Debug\desenhaF.FB3CF23C.Up2Date
+C:\xampp\htdocs\tp_computacaoGrafica\desenhaFaces_v1\obj\Debug\desenhaFaces_v1.exe
+C:\xampp\htdocs\tp_computacaoGrafica\desenhaFaces_v1\obj\Debug\desenhaFaces_v1.pdb
