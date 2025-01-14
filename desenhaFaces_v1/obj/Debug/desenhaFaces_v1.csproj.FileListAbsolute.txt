@@ -1,0 +1,11 @@
+C:\Users\joao-\Desktop\desenhaFaces_2425_v2\desenhaFaces_v1\bin\Debug\desenhaFaces_v1.exe.config
+C:\Users\joao-\Desktop\desenhaFaces_2425_v2\desenhaFaces_v1\bin\Debug\desenhaFaces_v1.exe
+C:\Users\joao-\Desktop\desenhaFaces_2425_v2\desenhaFaces_v1\bin\Debug\desenhaFaces_v1.pdb
+C:\Users\joao-\Desktop\desenhaFaces_2425_v2\desenhaFaces_v1\obj\Debug\desenhaFaces_v1.csproj.AssemblyReference.cache
+C:\Users\joao-\Desktop\desenhaFaces_2425_v2\desenhaFaces_v1\obj\Debug\desenhaFaces_v1.Form1.resources
+C:\Users\joao-\Desktop\desenhaFaces_2425_v2\desenhaFaces_v1\obj\Debug\desenhaFaces_v1.Properties.Resources.resources
+C:\Users\joao-\Desktop\desenhaFaces_2425_v2\desenhaFaces_v1\obj\Debug\desenhaFaces_v1.csproj.GenerateResource.cache
+C:\Users\joao-\Desktop\desenhaFaces_2425_v2\desenhaFaces_v1\obj\Debug\desenhaFaces_v1.csproj.CoreCompileInputs.cache
+C:\Users\joao-\Desktop\desenhaFaces_2425_v2\desenhaFaces_v1\obj\Debug\desenhaF.FB3CF23C.Up2Date
+C:\Users\joao-\Desktop\desenhaFaces_2425_v2\desenhaFaces_v1\obj\Debug\desenhaFaces_v1.exe
+C:\Users\joao-\Desktop\desenhaFaces_2425_v2\desenhaFaces_v1\obj\Debug\desenhaFaces_v1.pdb
