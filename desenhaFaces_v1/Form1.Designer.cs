@@ -501,9 +501,19 @@
             // distancia
             // 
             this.distancia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.distancia.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.distancia.Location = new System.Drawing.Point(885, 522);
             this.distancia.Maximum = new decimal(new int[] {
-            1000,
+            10000,
+            0,
+            0,
+            0});
+            this.distancia.Minimum = new decimal(new int[] {
+            100,
             0,
             0,
             0});
