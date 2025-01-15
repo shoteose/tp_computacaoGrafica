@@ -71,6 +71,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.distancia = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
+            this.dadosObjeto = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tb_transx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_transy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_transz)).BeginInit();
@@ -526,11 +527,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dadosObjeto
+            // 
+            this.dadosObjeto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dadosObjeto.AutoSize = true;
+            this.dadosObjeto.Location = new System.Drawing.Point(33, 543);
+            this.dadosObjeto.Name = "dadosObjeto";
+            this.dadosObjeto.Size = new System.Drawing.Size(106, 13);
+            this.dadosObjeto.TabIndex = 21;
+            this.dadosObjeto.Text = "                                 ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 600);
+            this.Controls.Add(this.dadosObjeto);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.distancia);
@@ -620,6 +632,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown distancia;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label dadosObjeto;
     }
 }
 

@@ -49,6 +49,12 @@ namespace desenhaFaces_v1
 
         private float distObservacao = 500;
 
+        private int nrFaces;
+
+        private int nrDesenhadas;
+
+        private string nomeObjeto;
+
         private Stream s; // stream para carregar os dados do ficheiro, no caso da estrutura do objeto ser lida a partir de um ficheiro
 
         public Objeto()
@@ -110,7 +116,7 @@ namespace desenhaFaces_v1
             brushPreenchimento = new SolidBrush(Color.SteelBlue);
 
             this.wireframe = false; // no início é desenhado com preenchimento
-            Debug.WriteLine(raio + " ; " + altura + " ; " + faces);
+            //Debug.WriteLine(raio + " ; " + altura + " ; " + faces);
             Cone(float.Parse(raio), float.Parse(altura), int.Parse(faces));
 
         }
@@ -395,7 +401,7 @@ namespace desenhaFaces_v1
                 res.Add(v.Clone());
             }
 
-            metodosMatriz3D.Matriz3D mTrans = Matriz3D.translacao(translacaoX, translacaoY, translacaoZ);
+            Matriz3D mTrans = Matriz3D.translacao(translacaoX, translacaoY, translacaoZ);
             Matriz3D mRotX = Matriz3D.rotacaoX(rotx);
             Matriz3D mRotY = Matriz3D.rotacaoY(roty);
             Matriz3D mRotZ = Matriz3D.rotacaoZ(rotz);
@@ -404,6 +410,7 @@ namespace desenhaFaces_v1
 
             //distância da câmara ao Plano Projeção
             Matriz3D mProjPerspetiva = Matriz3D.projPerspectiva(this.distObservacao);
+            
 
             for (int i = 0; i < res.Count; i++)
             {

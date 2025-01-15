@@ -296,6 +296,8 @@ namespace desenhaFaces_v1
                 Roty_tb.Value = 0;
                 Rotz_tb.Value = 0;
 
+                //dadosObjeto.Text = "alterie";
+
                 this.pb_desenho.Invalidate();
             }
         }

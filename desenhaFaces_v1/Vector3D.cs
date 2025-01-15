@@ -3,6 +3,7 @@
 using System;
 using System.Drawing;
 using System.IO;
+using desenhaFaces_v1;
 
 public class Vector3D
 {
@@ -214,8 +215,9 @@ public class Vector3D
 
     //novos
 
-   public void MultiplicaporMatriz_coordHomogeneas(metodosMatriz3D.Matriz3D matriz)
+   public void MultiplicaporMatriz_coordHomogeneas(Matriz3D matriz)
     {
+
         float[] resultado=matriz.multiplicaVector(new float[4] {this.x, this.y, this.z, this.w});
         this.x = resultado[0];
         this.y = resultado[1];
@@ -223,7 +225,7 @@ public class Vector3D
         this.w = resultado[3];
     }
 
-    public void MultiplicaporMatriz_coordCartesianas(metodosMatriz3D.Matriz3D matriz)
+    public void MultiplicaporMatriz_coordCartesianas(Matriz3D matriz)
     {
         float[] resultado = matriz.multiplicaVector(new float[4] { this.x, this.y, this.z, this.w });
         this.x = resultado[0]/ resultado[3];
