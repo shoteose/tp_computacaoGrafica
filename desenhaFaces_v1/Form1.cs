@@ -284,5 +284,20 @@ namespace desenhaFaces_v1
                 this.pb_desenho.Invalidate();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (obj != null)
+            {
+                tb_transx.Value = 0;
+                tb_transy.Value = 0;
+                tb_transz.Value = 0;
+                Rotx_tb.Value = 0;
+                Roty_tb.Value = 0;
+                Rotz_tb.Value = 0;
+
+                this.pb_desenho.Invalidate();
+            }
+        }
     }
 }
