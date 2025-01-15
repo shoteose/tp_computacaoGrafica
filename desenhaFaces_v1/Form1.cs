@@ -267,5 +267,22 @@ namespace desenhaFaces_v1
             }
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (obj != null)
+            {
+                obj.SetProjecao();
+                this.pb_desenho.Invalidate();
+            }
+        }
+
+        private void distancia_ValueChanged(object sender, EventArgs e)
+        {
+            if (obj != null)
+            {
+                obj.SetDistanciaCamera((float)distancia.Value);
+                this.pb_desenho.Invalidate();
+            }
+        }
     }
 }

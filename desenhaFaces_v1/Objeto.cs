@@ -45,6 +45,10 @@ namespace desenhaFaces_v1
 
         private bool wireframe; // define se vai ser usado com preenchimento ou em linha de arame
 
+        private bool projPerpetiva;
+
+        private float distObservacao = 500;
+
         private Stream s; // stream para carregar os dados do ficheiro, no caso da estrutura do objeto ser lida a partir de um ficheiro
 
         public Objeto()
@@ -67,6 +71,7 @@ namespace desenhaFaces_v1
             brushPreenchimento = new SolidBrush(Color.SteelBlue);
 
             this.wireframe = false; // no início é desenhado com preenchimento
+            this.projPerpetiva = true; // no inivio é desenhado com a paralela
 
             switch (tipoModelo)
             {
@@ -91,7 +96,6 @@ namespace desenhaFaces_v1
                     Cone(50, 100, 6);
                     break;
 
-                    //Quadrado();
             }
 
         }
@@ -351,6 +355,16 @@ namespace desenhaFaces_v1
             this.wireframe = !this.wireframe;
         }
 
+        public void SetDistanciaCamera(float dist)
+        {
+            this.distObservacao = dist;
+        }
+
+        public void SetProjecao()
+        {
+            this.projPerpetiva = !this.projPerpetiva;
+        }
+
         public void SetCores(Pen penContorno, SolidBrush brushPreenchimento)
         {
             this.penContorno = penContorno;
@@ -388,8 +402,8 @@ namespace desenhaFaces_v1
 
             Matriz3D mProjParalela = Matriz3D.projParalela();
 
-            float distToPlanoProj = 500.0f; //distância da câmara ao Plano Projeção
-            Matriz3D mProjPerspetiva = Matriz3D.projPerspectiva(distToPlanoProj);
+            //distância da câmara ao Plano Projeção
+            Matriz3D mProjPerspetiva = Matriz3D.projPerspectiva(this.distObservacao);
 
             for (int i = 0; i < res.Count; i++)
             {
@@ -399,8 +413,16 @@ namespace desenhaFaces_v1
                 v.MultiplicaporMatriz_coordHomogeneas(mRotY);
                 v.MultiplicaporMatriz_coordHomogeneas(mRotZ);
                 v.MultiplicaporMatriz_coordHomogeneas(mTrans);
-                //v.MultiplicaporMatriz_coordCartesianas(mProjParalela);
-                v.MultiplicaporMatriz_coordCartesianas(mProjPerspetiva);
+                if (!this.projPerpetiva)
+                {
+                    v.MultiplicaporMatriz_coordCartesianas(mProjParalela);
+
+                }
+                else
+                {
+                    v.MultiplicaporMatriz_coordCartesianas(mProjPerspetiva);
+                }
+                
             }
 
             return res;

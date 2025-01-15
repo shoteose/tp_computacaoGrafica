@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhafaces_v1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|solutionrelative:desenhafaces_v1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|c:\\xampp\\htdocs\\tp_computacaografica\\desenhafaces_v1\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|solutionrelative:desenhafaces_v1\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|c:\\xampp\\htdocs\\tp_computacaografica\\desenhafaces_v1\\objeto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|solutionrelative:desenhafaces_v1\\objeto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|c:\\xampp\\htdocs\\tp_computacaografica\\desenhafaces_v1\\face.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|solutionrelative:desenhafaces_v1\\face.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|c:\\xampp\\htdocs\\tp_computacaografica\\desenhafaces_v1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhafaces_v1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|solutionrelative:desenhafaces_v1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhafaces_v1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|solutionrelative:desenhafaces_v1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|c:\\xampp\\htdocs\\tp_computacaografica\\desenhafaces_v1\\vector3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|solutionrelative:desenhafaces_v1\\vector3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,57 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "Vector3D.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Vector3D.cs",
+              "RelativeDocumentMoniker": "desenhaFaces_v1\\Vector3D.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Vector3D.cs",
+              "RelativeToolTip": "desenhaFaces_v1\\Vector3D.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAA6wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T12:11:04.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "desenhaFaces_v1\\Form1.Designer.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Form1.Designer.cs",
+              "RelativeToolTip": "desenhaFaces_v1\\Form1.Designer.cs",
+              "ViewState": "AgIAAM8BAAAAAAAAAAAwwOcBAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T12:09:07.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Objeto.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Objeto.cs",
               "RelativeDocumentMoniker": "desenhaFaces_v1\\Objeto.cs",
               "ToolTip": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Objeto.cs",
               "RelativeToolTip": "desenhaFaces_v1\\Objeto.cs",
-              "ViewState": "AgIAAOoBAAAAAAAAAAAIwPkBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYBAAAAAAAAAAAlwGcBAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-14T22:17:49.549Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Face.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Face.cs",
-              "RelativeDocumentMoniker": "desenhaFaces_v1\\Face.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Face.cs",
-              "RelativeToolTip": "desenhaFaces_v1\\Face.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T22:17:44.003Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Form1.cs",
               "RelativeDocumentMoniker": "desenhaFaces_v1\\Form1.cs",
               "ToolTip": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Form1.cs",
               "RelativeToolTip": "desenhaFaces_v1\\Form1.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAQwBIAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAN0AAAAAAAAAAIAwwBkBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-14T14:33:45.656Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Form1.cs",
               "RelativeDocumentMoniker": "desenhaFaces_v1\\Form1.cs",
               "ToolTip": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Form1.cs [Design]",
               "RelativeToolTip": "desenhaFaces_v1\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T14:33:37.356Z"
+              "WhenOpened": "2025-01-14T14:33:37.356Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
