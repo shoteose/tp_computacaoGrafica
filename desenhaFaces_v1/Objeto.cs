@@ -11,7 +11,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using metodosMatriz3D; //implementa a classe Matriz3D
+//using metodosMatriz3D; //implementa a classe Matriz3D
 
 namespace desenhaFaces_v1
 {
@@ -49,8 +49,6 @@ namespace desenhaFaces_v1
 
         private float distObservacao = 500;
 
-        private int nrFaces;
-
         private int nrDesenhadas;
 
         private string nomeObjeto;
@@ -64,11 +62,12 @@ namespace desenhaFaces_v1
 
         public Objeto(float largura, float altura, string raio, string alturaC, string faces)
         {
-            InicializaObjetoCone( raio,  alturaC,  faces);
+            InicializaObjetoCone(raio, alturaC, faces);
         }
 
         private void InicializaObjeto(string tipoModelo)
         {
+            this.nomeObjeto = tipoModelo;
             this.vertices = new ArrayList();
             this.indicesFaces = new ArrayList();
             this.numvPorFace = new ArrayList();
@@ -108,6 +107,7 @@ namespace desenhaFaces_v1
 
         private void InicializaObjetoCone(string raio, string altura, string faces)
         {
+            this.nomeObjeto = "cone";
             this.vertices = new ArrayList();
             this.indicesFaces = new ArrayList();
             this.numvPorFace = new ArrayList();
@@ -137,7 +137,7 @@ namespace desenhaFaces_v1
 
             numvPorFace.Add(4);
 
-           // Debug.WriteLine("num vértices da face " + indicesFaces.Count);
+            // Debug.WriteLine("num vértices da face " + indicesFaces.Count);
         }
 
         private void Cubo()
@@ -410,7 +410,7 @@ namespace desenhaFaces_v1
 
             //distância da câmara ao Plano Projeção
             Matriz3D mProjPerspetiva = Matriz3D.projPerspectiva(this.distObservacao);
-            
+
 
             for (int i = 0; i < res.Count; i++)
             {
@@ -429,7 +429,7 @@ namespace desenhaFaces_v1
                 {
                     v.MultiplicaporMatriz_coordCartesianas(mProjPerspetiva);
                 }
-                
+
             }
 
             return res;
@@ -492,6 +492,8 @@ namespace desenhaFaces_v1
             ArrayList verticesTransf = Transforma(translacaoX, translacaoY, translacaoZ, rotacaoX, rotacaoY, rotacaoZ);
             ArrayList faces = GeraFaces(verticesTransf);
 
+            this.nrDesenhadas = faces.Count;
+
             for (int i = 0; i < faces.Count; i++)
             {
                 Face f = (Face)faces[i];
@@ -513,9 +515,10 @@ namespace desenhaFaces_v1
             this.LeFicheiro();
             this.SetJanela(largura, altura);
         }
-        public void SetObjeto(float largura, float altura, Stream s)
+        public void SetObjeto(float largura, float altura, Stream s, string nomeFicheiro)
         {
             this.s = s;
+            this.nomeObjeto = nomeFicheiro;
             this.LeFicheiro();
             this.SetJanela(largura, altura);
 
@@ -557,7 +560,7 @@ namespace desenhaFaces_v1
                         }
                         else
                         {
-                            comecaEmZero= false;
+                            comecaEmZero = false;
                         }
 
                         for (int i = 1; i < coordenadasSemEspaco.Length; i++)
@@ -567,7 +570,7 @@ namespace desenhaFaces_v1
 
                             if (comecaEmZero)
                             {
-                                index -= 1; 
+                                index -= 1;
                             }
                             novaLinha += " " + index;
                         }
@@ -609,18 +612,15 @@ namespace desenhaFaces_v1
                     this.indicesFaces.Add(int.Parse(indicesVertices[i]));
                 }
             }
-
-            Console.WriteLine($"Vértices carregados: {vertices.Count}");
-            foreach (Vector3D v in vertices)
-            {
-                Console.WriteLine($"Vértice: {v}");
-            }
-
-            Console.WriteLine($"numvPorFace: {string.Join(", ", numvPorFace.Cast<int>())}");
-            Console.WriteLine($"indicesFaces: {string.Join(", ", indicesFaces.Cast<int>())}");
-
-
         }
+
+        public string InformacoesObj()
+        {
+            int nrTotalFaces = this.numvPorFace.Count;
+            string texto = $"Nome: " + this.nomeObjeto + "; " + "Nr Total de Faces: " + nrTotalFaces + "; " + "Nr de Faces Desenhadas: " + this.nrDesenhadas + ";";
+            return texto;
+        }
+
 
 
 

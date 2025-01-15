@@ -28,6 +28,7 @@ namespace desenhaFaces_v1
             InitializeComponent();
             
             obj = new Objeto(pb_desenho.Width, pb_desenho.Height);
+            
 
             pen1 = new Pen(CorStroke_pb.BackColor, (float)Espessura_nud.Value);
             pen1.LineJoin = System.Drawing.Drawing2D.LineJoin.Round;// arredonda a junção das linhas
@@ -46,6 +47,7 @@ namespace desenhaFaces_v1
             if (obj != null)
             {
                 obj.Desenha(g, tb_transx.Value, tb_transy.Value, tb_transz.Value, Rotx_tb.Value, Roty_tb.Value, Rotz_tb.Value);
+                dadosObjeto.Text = obj.InformacoesObj();
             }
         }
 
@@ -143,6 +145,8 @@ namespace desenhaFaces_v1
 
                         using (str)
                         {
+                            nomeFicheiro = fileDialog.SafeFileName;
+
                             if (obj != null)
                             {
                                 // se vamos querer usar o mesmo obj para os dados lidos a partir do ficheiro, temos de remover dos arraylist os dados do objeto anterior
@@ -150,11 +154,10 @@ namespace desenhaFaces_v1
                                 obj.GetVertices3D().Clear();
                                 obj.GetIndicesFaces().Clear();
                                 obj.GetNumvPorFace().Clear();
-                                obj.SetObjeto(this.pb_desenho.Width, this.pb_desenho.Height, str); //lê o novo objeto a partir de ficheiro
+                                obj.SetObjeto(this.pb_desenho.Width, this.pb_desenho.Height, str, nomeFicheiro); //lê o novo objeto a partir de ficheiro
                             }
 
-                            nomeFicheiro = fileDialog.SafeFileName;
-
+                            
                             SetCores(); // atualizar a classe objeto com os atributos da pen e brush que foram escolhidos no form
 
                             if (cb_wireframe.Checked)
@@ -163,6 +166,8 @@ namespace desenhaFaces_v1
                             }
 
                             this.pb_desenho.Invalidate();
+                            
+
 
                         }
                     }
@@ -217,6 +222,8 @@ namespace desenhaFaces_v1
             this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, this.tipoModelo);
 
             this.pb_desenho.Invalidate();
+            
+
         }
 
         private void prismaPentagonalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -226,6 +233,8 @@ namespace desenhaFaces_v1
             this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, this.tipoModelo);
 
             this.pb_desenho.Invalidate();
+            
+
         }
 
         private void piramideQuadrangularToolStripMenuItem_Click(object sender, EventArgs e)
@@ -235,6 +244,8 @@ namespace desenhaFaces_v1
             this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, this.tipoModelo);
 
             this.pb_desenho.Invalidate();
+            
+
         }
 
         private void piramideHexagonalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -244,6 +255,8 @@ namespace desenhaFaces_v1
             this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, this.tipoModelo);
 
             this.pb_desenho.Invalidate();
+            
+
         }
 
         private void coneToolStripMenuItem_Click(object sender, EventArgs e)
@@ -259,6 +272,8 @@ namespace desenhaFaces_v1
                     this.tipoModelo = "cone";
                     this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, textBoxRaio.Text, textBoxAltura.Text, textBoxFaces.Text);
                     this.pb_desenho.Invalidate();
+                    
+
                 }
             }
             else
