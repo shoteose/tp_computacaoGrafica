@@ -17,6 +17,7 @@ namespace desenhaFaces_v1
     public partial class Form1 : Form
     {
         private Objeto obj;
+        private Objeto objClone;
         private Pen pen1;
         private SolidBrush brush1;
         private string nomeFicheiro;
@@ -36,6 +37,8 @@ namespace desenhaFaces_v1
 
             // atrbuir a pen e o brush ao objecto
             obj.SetCores(pen1, brush1);
+            //objClone.SetCores(pen1, brush1);
+
 
         }
 
@@ -48,8 +51,28 @@ namespace desenhaFaces_v1
             {
                 obj.Desenha(g, tb_transx.Value, tb_transy.Value, tb_transz.Value, Rotx_tb.Value, Roty_tb.Value, Rotz_tb.Value);
                 dadosObjeto.Text = obj.InformacoesObj();
+
             }
         }
+
+        private void pb_desenho2_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+
+            if (obj != null)
+            {
+                this.objClone = obj.Clone();
+                // Configura para projeção paralela
+                //objClone.SetProjecaoParalela();
+
+                // Desenha com a projeção paralela
+                objClone.Desenha(g, tb_transx.Value, tb_transy.Value, tb_transz.Value, Rotx_tb.Value, Roty_tb.Value, Rotz_tb.Value);
+
+               // dadosObjeto.Text = obj.InformacoesObj();
+            }
+        }
+
 
         private void SetCores() //para atualizar a classe objeto com os atributos da pen e brush que foram escolhidos no form
         {
@@ -59,6 +82,7 @@ namespace desenhaFaces_v1
                 pen1.Width = (float)Espessura_nud.Value;
                 brush1.Color = CorFill_pb.BackColor;
                 obj.SetCores(pen1, brush1);//atribui as cores escolhidas no form às variáveis na classe
+                objClone.SetCores(pen1, brush1);
             }
         }
 
@@ -67,7 +91,8 @@ namespace desenhaFaces_v1
             if (obj != null)
             {
                 obj.SetWireframe();
-                this.pb_desenho.Invalidate();
+                objClone.SetWireframe();
+                this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
             }
         }
 
@@ -76,7 +101,7 @@ namespace desenhaFaces_v1
             if (obj != null)
             {
                 SetCores();
-                this.pb_desenho.Invalidate();
+this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
 
             }
         }
@@ -91,7 +116,7 @@ namespace desenhaFaces_v1
                 if (obj != null)
                 {
                     SetCores();
-                    this.pb_desenho.Invalidate();
+    this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
                 }
             }
         }
@@ -107,24 +132,24 @@ namespace desenhaFaces_v1
                 if (obj != null)
                 {
                     SetCores();
-                    this.pb_desenho.Invalidate();
+    this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
                 }
             }
         }
 
         private void tb_transy_ValueChanged(object sender, EventArgs e)
         {
-            this.pb_desenho.Invalidate();
+            this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
         }
 
         private void tb_transx_ValueChanged(object sender, EventArgs e)
         {
-            this.pb_desenho.Invalidate();
+            this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
         }
 
         private void tb_transz_ValueChanged(object sender, EventArgs e)
         {
-            this.pb_desenho.Invalidate();
+            this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
         }
 
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -163,9 +188,10 @@ namespace desenhaFaces_v1
                             if (cb_wireframe.Checked)
                             {
                                 obj.SetWireframe();
+                                objClone.SetWireframe();
                             }
 
-                            this.pb_desenho.Invalidate();
+                            this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
                             
 
 
@@ -196,23 +222,23 @@ namespace desenhaFaces_v1
             if (obj != null)
             {
                 obj.SetJanela(this.pb_desenho.Width, this.pb_desenho.Height);
-                this.pb_desenho.Invalidate();
+this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
             }
         }
 
         private void Rotx_tb_ValueChanged(object sender, EventArgs e)
         {
-            this.pb_desenho.Invalidate();
+            this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
         }
 
         private void Roty_tb_ValueChanged(object sender, EventArgs e)
         {
-            this.pb_desenho.Invalidate();
+            this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
         }
 
         private void Rotz_tb_ValueChanged(object sender, EventArgs e)
         {
-            this.pb_desenho.Invalidate();
+            this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
         }
 
         private void cuboToolStripMenuItem_Click(object sender, EventArgs e)
@@ -220,9 +246,12 @@ namespace desenhaFaces_v1
             this.tipoModelo = "cubo";
 
             this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, this.tipoModelo);
+            checkBox2.Checked = false;
 
-            this.pb_desenho.Invalidate();
-            
+            this.pb_desenho.Invalidate(); this.pb_desenho2.Invalidate();
+            checkBox2.Checked = false;
+
+
 
         }
 
@@ -232,8 +261,10 @@ namespace desenhaFaces_v1
 
             this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, this.tipoModelo);
 
-            this.pb_desenho.Invalidate();
-            
+            this.pb_desenho.Invalidate(); this.pb_desenho2.Invalidate();
+            checkBox2.Checked = false;
+
+
 
         }
 
@@ -243,8 +274,10 @@ namespace desenhaFaces_v1
 
             this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, this.tipoModelo);
 
-            this.pb_desenho.Invalidate();
-            
+            this.pb_desenho.Invalidate(); this.pb_desenho2.Invalidate();
+            checkBox2.Checked = false;
+
+
 
         }
 
@@ -254,8 +287,10 @@ namespace desenhaFaces_v1
 
             this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, this.tipoModelo);
 
-            this.pb_desenho.Invalidate();
-            
+            this.pb_desenho.Invalidate(); this.pb_desenho2.Invalidate();
+            checkBox2.Checked = false;
+
+
 
         }
 
@@ -271,8 +306,11 @@ namespace desenhaFaces_v1
                 else { 
                     this.tipoModelo = "cone";
                     this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, textBoxRaio.Text, textBoxAltura.Text, textBoxFaces.Text);
-                    this.pb_desenho.Invalidate();
-                    
+
+                    this.pb_desenho.Invalidate(); this.pb_desenho2.Invalidate();
+                    checkBox2.Checked = false;
+
+
 
                 }
             }
@@ -287,7 +325,9 @@ namespace desenhaFaces_v1
             if (obj != null)
             {
                 obj.SetProjecao();
-                this.pb_desenho.Invalidate();
+                objClone.SetProjecao();
+this.pb_desenho.Invalidate();
+                this.pb_desenho2.Invalidate();
             }
         }
 
@@ -296,7 +336,7 @@ namespace desenhaFaces_v1
             if (obj != null)
             {
                 obj.SetDistanciaCamera((float)distancia.Value);
-                this.pb_desenho.Invalidate();
+this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
             }
         }
 
@@ -313,7 +353,17 @@ namespace desenhaFaces_v1
 
                 //dadosObjeto.Text = "alterie";
 
+this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (obj != null)
+            {
+                obj.SetBackCull();
                 this.pb_desenho.Invalidate();
+                this.pb_desenho2.Invalidate();
             }
         }
     }

@@ -47,6 +47,8 @@ namespace desenhaFaces_v1
 
         private bool projPerpetiva;
 
+        private bool usarBackCull;
+
         private float distObservacao = 500;
 
         private int nrDesenhadas;
@@ -59,6 +61,29 @@ namespace desenhaFaces_v1
         {
             InicializaObjeto("cubo");
         }
+
+        public Objeto Clone()
+        {
+            Objeto objeto = new Objeto();
+            objeto.vertices = this.vertices;
+            objeto.indicesFaces = this.indicesFaces;
+            objeto.numvPorFace = this.numvPorFace;
+            objeto.larguraDesenho = this.larguraDesenho;
+            objeto.alturaDesenho = this.alturaDesenho;
+            objeto.penContorno = this.penContorno;
+            objeto.brushPreenchimento = this.brushPreenchimento;
+            objeto.wireframe = this.wireframe;
+            objeto.projPerpetiva = !this.projPerpetiva;
+            objeto.usarBackCull = true;
+            objeto.distObservacao = this.distObservacao;
+            objeto.nrDesenhadas = this.nrDesenhadas;
+            objeto.nomeObjeto = this.nomeObjeto;
+            objeto.s = this.s;
+
+
+            return objeto;
+        }
+
 
         public Objeto(float largura, float altura, string raio, string alturaC, string faces)
         {
@@ -77,6 +102,7 @@ namespace desenhaFaces_v1
 
             this.wireframe = false; // no início é desenhado com preenchimento
             this.projPerpetiva = true; // no inivio é desenhado com a paralela
+            this.usarBackCull = false;
 
             switch (tipoModelo)
             {
@@ -249,7 +275,7 @@ namespace desenhaFaces_v1
             vertices.Add(new Vector3D(50, 50, -50));
             vertices.Add(new Vector3D(-50, 50, -50));
 
-            // Vértice superior (ápice)
+            // Vértice superior
             vertices.Add(new Vector3D(0, 0, 50));
 
             // Base
@@ -371,6 +397,18 @@ namespace desenhaFaces_v1
             this.projPerpetiva = !this.projPerpetiva;
         }
 
+        public void SetBackCull()
+        {
+            this.usarBackCull = !this.usarBackCull;
+        }
+
+        public void SetProjecaoParalela()
+        {
+            this.projPerpetiva = false;
+        }
+
+
+
         public void SetCores(Pen penContorno, SolidBrush brushPreenchimento)
         {
             this.penContorno = penContorno;
@@ -452,6 +490,12 @@ namespace desenhaFaces_v1
                 faces.Add(f);
             }
 
+            foreach (Face f in faces)
+            {
+                Console.WriteLine($"Face média Z: {f.getMediaZ()}");
+            }
+
+
             //faces.Sort(new comparadorFacesZ());
 
             // bubble sort aproveitado de https://www.geeksforgeeks.org/bubble-sort-algorithm/
@@ -460,33 +504,77 @@ namespace desenhaFaces_v1
             int n = faces.Count;
             bool trocou;
 
-            for (int i = 0; i < n - 1; i++)
+            if (this.projPerpetiva)
             {
-                trocou = false;
-
-                for (int j = 0; j < n - i - 1; j++)
-                {
-                    Face face1 = (Face)faces[j];
-                    Face face2 = (Face)faces[j + 1];
-
-                    if (face1.getMediaZ() > face2.getMediaZ())
+                if (!this.usarBackCull) {
+                    
+                    for (int i = 0; i < n - 1; i++)
                     {
-                        // troca as posicoes
-                        faces[j] = face2;
-                        faces[j + 1] = face1;
+                        trocou = false;
 
-                        trocou = true;
+                        for (int j = 0; j < n - i - 1; j++)
+                        {
+                            Face face1 = (Face)faces[j];
+                            Face face2 = (Face)faces[j + 1];
+
+
+                            if (face1.getMediaZ() > face2.getMediaZ())
+                            {
+                                // troca as posicoes
+                                faces[j] = face2;
+                                faces[j + 1] = face1;
+
+                                trocou = true;
+                            }
+
+                        }
+
+                        if (!trocou)
+                            break;
                     }
+                    
+                }
+                else
+                {
+                    faces = metodoBackFaceCullin(faces);
+
                 }
 
-                if (!trocou)
-                    break;
+            }
+            else
+            {
+                faces = metodoBackFaceCullin(faces);
+            }
+
+
+            string info = "nao";
+            if (this.projPerpetiva) { info = "sim"; }
+
+            foreach (Face f in faces)
+            {
+                Console.WriteLine($"Face média Z organizado: {f.getMediaZ()}" + "na projecao perpetiva: " + info) ;
             }
 
             return faces;
         }
 
+        public ArrayList metodoBackFaceCullin(ArrayList faces)
+        {
+            ArrayList facesNovas = new ArrayList();
 
+            foreach (Face f in faces)
+            {
+
+                if(f.getZNormalizado() >= 0)
+                {
+                    facesNovas.Add(f);
+                }
+
+            }
+
+
+            return facesNovas;
+        }
         public void Desenha(Graphics g, float translacaoX, float translacaoY, float translacaoZ, float rotacaoX, float rotacaoY, float rotacaoZ)
         {
             ArrayList verticesTransf = Transforma(translacaoX, translacaoY, translacaoZ, rotacaoX, rotacaoY, rotacaoZ);

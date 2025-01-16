@@ -67,5 +67,18 @@ namespace desenhaFaces_v1
             return media;
         }
 
+        public float getZNormalizado()
+        {
+            Vector3D vetor1 = (Vector3D)vertices3D[1] - (Vector3D)vertices3D[0];
+            Vector3D vetor2 = (Vector3D)vertices3D[2] - (Vector3D)vertices3D[1];
+
+            Vector3D vetor3 = vetor1 ^ vetor2;
+            vetor3.Normalize();
+            return vetor3.z;
+        }
+
+
+
+
     }
 }
