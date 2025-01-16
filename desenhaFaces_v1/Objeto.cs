@@ -57,6 +57,8 @@ namespace desenhaFaces_v1
 
         private Stream s; // stream para carregar os dados do ficheiro, no caso da estrutura do objeto ser lida a partir de um ficheiro
 
+        private float escalaAtual = 1;
+
         public Objeto()
         {
             InicializaObjeto("cubo");
@@ -709,6 +711,20 @@ namespace desenhaFaces_v1
             return texto;
         }
 
+        public void Escala(float escala)
+        {
+            float escalaConformeAtual = escala / this.escalaAtual;
+            this.escalaAtual = escala;
+
+            Matriz3D matrizEscala = Matriz3D.escala(escalaConformeAtual, escalaConformeAtual, escalaConformeAtual);
+
+            // Aplica a matriz de escala a todos os vértices
+            for (int i = 0; i < vertices.Count; i++)
+            {
+                Vector3D v = (Vector3D)vertices[i];
+                v.MultiplicaporMatriz_coordHomogeneas(matrizEscala);
+            }
+        }
 
 
 

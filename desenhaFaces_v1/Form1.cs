@@ -23,7 +23,6 @@ namespace desenhaFaces_v1
         private string nomeFicheiro;
         private string tipoModelo;
 
-
         public Form1()
         {
             InitializeComponent();
@@ -184,6 +183,7 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
 
                             
                             SetCores(); // atualizar a classe objeto com os atributos da pen e brush que foram escolhidos no form
+                            escala.Value = 1;
 
                             if (cb_wireframe.Checked)
                             {
@@ -247,7 +247,7 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
 
             this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, this.tipoModelo);
             checkBox2.Checked = false;
-
+            escala.Value = 1;
             this.pb_desenho.Invalidate(); this.pb_desenho2.Invalidate();
             checkBox2.Checked = false;
 
@@ -260,6 +260,7 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
             this.tipoModelo = "prismaPenta";
 
             this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, this.tipoModelo);
+            escala.Value = 1;
 
             this.pb_desenho.Invalidate(); this.pb_desenho2.Invalidate();
             checkBox2.Checked = false;
@@ -273,6 +274,7 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
             this.tipoModelo = "piramideQuad";
 
             this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, this.tipoModelo);
+            escala.Value = 1;
 
             this.pb_desenho.Invalidate(); this.pb_desenho2.Invalidate();
             checkBox2.Checked = false;
@@ -286,6 +288,7 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
             this.tipoModelo = "piramideHexa";
 
             this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, this.tipoModelo);
+            escala.Value = 1;
 
             this.pb_desenho.Invalidate(); this.pb_desenho2.Invalidate();
             checkBox2.Checked = false;
@@ -306,6 +309,7 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
                 else { 
                     this.tipoModelo = "cone";
                     this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, textBoxRaio.Text, textBoxAltura.Text, textBoxFaces.Text);
+                    escala.Value = 1;
 
                     this.pb_desenho.Invalidate(); this.pb_desenho2.Invalidate();
                     checkBox2.Checked = false;
@@ -350,10 +354,12 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
                 Rotx_tb.Value = 0;
                 Roty_tb.Value = 0;
                 Rotz_tb.Value = 0;
+                escala.Value = 1;
+
 
                 //dadosObjeto.Text = "alterie";
 
-this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
+                this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
             }
         }
 
@@ -362,6 +368,23 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
             if (obj != null)
             {
                 obj.SetBackCull();
+                this.pb_desenho.Invalidate();
+                this.pb_desenho2.Invalidate();
+            }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            if (obj != null)
+            {
+                obj.Escala((float)escala.Value);
+                objClone.Escala((float)escala.Value);
+
                 this.pb_desenho.Invalidate();
                 this.pb_desenho2.Invalidate();
             }
