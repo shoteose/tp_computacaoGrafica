@@ -214,7 +214,7 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
 
         private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Desenho de Faces Poligonais\n" + "Versão 2.0\n" + "João Paulo Martins Novo n25968\n");
+            MessageBox.Show("Desenho de Faces Poligonais\n" + "Versão 3.01 - Feito pelos máquinaaas\n" + "João Paulo Martins Novo n25968\n" + "Hugo Barbosa Diniz n26825\n" + "Mateus Cruz Viana n29772\n");
         }
 
         private void Form1_Resize(object sender, EventArgs e)
@@ -373,11 +373,6 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
             }
         }
 
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             if (obj != null)
@@ -388,6 +383,11 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
                 this.pb_desenho.Invalidate();
                 this.pb_desenho2.Invalidate();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("20 na pauta?");
         }
     }
 }

@@ -124,11 +124,6 @@ namespace desenhaFaces_v1
                 case "piramideHexa":
                     TroncoPiramideHexagonal();
                     break;
-
-                case "cone":
-                    Cone(50, 100, 6);
-                    break;
-
             }
 
         }
@@ -143,7 +138,7 @@ namespace desenhaFaces_v1
             penContorno = new Pen(Color.Black, 1);
             brushPreenchimento = new SolidBrush(Color.SteelBlue);
 
-            this.wireframe = false; // no início é desenhado com preenchimento
+            this.wireframe = false;
             //Debug.WriteLine(raio + " ; " + altura + " ; " + faces);
             Cone(float.Parse(raio), float.Parse(altura), int.Parse(faces));
 
@@ -250,23 +245,46 @@ namespace desenhaFaces_v1
             vertices.Add(new Vector3D(0, 50, 50));
             vertices.Add(new Vector3D(-70, 0, 50));
 
-            // Base inferior
-            indicesFaces.Add(0); indicesFaces.Add(1); indicesFaces.Add(2); indicesFaces.Add(3); indicesFaces.Add(4);
+            
+            indicesFaces.Add(4); indicesFaces.Add(3); indicesFaces.Add(2); indicesFaces.Add(1); indicesFaces.Add(0);
             numvPorFace.Add(5);
 
-            // Base superior
+
+            
             indicesFaces.Add(5); indicesFaces.Add(6); indicesFaces.Add(7); indicesFaces.Add(8); indicesFaces.Add(9);
             numvPorFace.Add(5);
 
-            // Laterais
-            for (int i = 0; i < 5; i++)
-            {
-                indicesFaces.Add(i);
-                indicesFaces.Add((i + 1) % 5);
-                indicesFaces.Add(((i + 1) % 5) + 5);
-                indicesFaces.Add(i + 5);
-                numvPorFace.Add(4);
-            }
+            indicesFaces.Add(0);
+            indicesFaces.Add(1);
+            indicesFaces.Add(6);
+            indicesFaces.Add(5);
+            numvPorFace.Add(4);
+
+            indicesFaces.Add(1);
+            indicesFaces.Add(2);
+            indicesFaces.Add(7);
+            indicesFaces.Add(6);
+            numvPorFace.Add(4);
+
+            indicesFaces.Add(2);
+            indicesFaces.Add(3);
+            indicesFaces.Add(8);
+            indicesFaces.Add(7);
+            numvPorFace.Add(4);
+
+            indicesFaces.Add(3);
+            indicesFaces.Add(4);
+            indicesFaces.Add(9);
+            indicesFaces.Add(8);
+            numvPorFace.Add(4);
+
+            indicesFaces.Add(4);
+            indicesFaces.Add(0);
+            indicesFaces.Add(5);
+            indicesFaces.Add(9);
+            numvPorFace.Add(4);
+
+
         }
 
         private void PiramideQuadrangular()
@@ -281,88 +299,150 @@ namespace desenhaFaces_v1
             vertices.Add(new Vector3D(0, 0, 50));
 
             // Base
-            indicesFaces.Add(0); indicesFaces.Add(1); indicesFaces.Add(2); indicesFaces.Add(3);
+            indicesFaces.Add(3);
+            indicesFaces.Add(2);
+            indicesFaces.Add(1);
+            indicesFaces.Add(0);
+
             numvPorFace.Add(4);
 
-            // Faces laterais
-            for (int i = 0; i < 4; i++)
-            {
-                indicesFaces.Add(i);
-                indicesFaces.Add((i + 1) % 4);
-                indicesFaces.Add(4);
-                numvPorFace.Add(3);
-            }
+
+            indicesFaces.Add(0);
+            indicesFaces.Add(1);
+            indicesFaces.Add(4);
+            numvPorFace.Add(3);
+
+            indicesFaces.Add(1);
+            indicesFaces.Add(2);
+            indicesFaces.Add(4);
+            numvPorFace.Add(3);
+
+            indicesFaces.Add(2);
+            indicesFaces.Add(3);
+            indicesFaces.Add(4);
+
+            numvPorFace.Add(3);
+
+            indicesFaces.Add(3);
+            indicesFaces.Add(0);
+            indicesFaces.Add(4);
+
+            numvPorFace.Add(3);
+
         }
 
         private void TroncoPiramideHexagonal()
         {
-            // Base inferior (hexágono menor)
-            float sizeSmall = 30.0f; // Tamanho do hexágono menor
-            for (int i = 0; i < 6; i++)
-            {
-                float angle = (float)(Math.PI / 3 * i);
-                vertices.Add(new Vector3D(sizeSmall * (float)Math.Cos(angle), sizeSmall * (float)Math.Sin(angle), -50));
-            }
+             // base inferio (hexágono menor)
 
-            // Base superior (hexágono maior)
-            float sizeLarge = 50.0f; // Tamanho do hexágono maior
-            for (int i = 0; i < 6; i++)
-            {
-                float angle = (float)(Math.PI / 3 * i);
-                vertices.Add(new Vector3D(sizeLarge * (float)Math.Cos(angle), sizeLarge * (float)Math.Sin(angle), 50));
-            }
+            vertices.Add(new Vector3D(30, 0, -50));   // v0
+            vertices.Add(new Vector3D(15, 26, -50));  // v1
+            vertices.Add(new Vector3D(-15, 26, -50)); // v2
+            vertices.Add(new Vector3D(-30, 0, -50));  // v3
+            vertices.Add(new Vector3D(-15, -26, -50));// v4
+            vertices.Add(new Vector3D(15, -26, -50)); // v5
 
-            // Base inferior
-            for (int i = 0; i < 6; i++) indicesFaces.Add(i);
+
+             // base superior (hexágono maior)
+
+            vertices.Add(new Vector3D(50, 0, 50));   // v6
+            vertices.Add(new Vector3D(25, 43, 50));  // v7
+            vertices.Add(new Vector3D(-25, 43, 50)); // v8
+            vertices.Add(new Vector3D(-50, 0, 50));  // v9
+            vertices.Add(new Vector3D(-25, -43, 50));// v10
+            vertices.Add(new Vector3D(25, -43, 50)); // v11
+
+
+            // laterais
+
+            indicesFaces.Add(5);
+            indicesFaces.Add(4);
+            indicesFaces.Add(3);
+            indicesFaces.Add(2);
+            indicesFaces.Add(1);
+            indicesFaces.Add(0);
             numvPorFace.Add(6);
 
-            // Base superior
-            for (int i = 6; i < 12; i++) indicesFaces.Add(i);
+             
+            indicesFaces.Add(6);
+            indicesFaces.Add(7);
+            indicesFaces.Add(8);
+            indicesFaces.Add(9);
+            indicesFaces.Add(10);
+            indicesFaces.Add(11);
             numvPorFace.Add(6);
 
-            // Faces laterais
-            for (int i = 0; i < 6; i++)
-            {
-                int next = (i + 1) % 6;
-                indicesFaces.Add(i);
-                indicesFaces.Add(next);
-                indicesFaces.Add(next + 6);
-                indicesFaces.Add(i + 6);
-                numvPorFace.Add(4);
-            }
+            indicesFaces.Add(0);  
+            indicesFaces.Add(1);  
+            indicesFaces.Add(7);  
+            indicesFaces.Add(6);  
+            numvPorFace.Add(4);
+
+            indicesFaces.Add(1);  
+            indicesFaces.Add(2);  
+            indicesFaces.Add(8);  
+            indicesFaces.Add(7);  
+            numvPorFace.Add(4);
+
+            indicesFaces.Add(2);  
+            indicesFaces.Add(3);  
+            indicesFaces.Add(9);  
+            indicesFaces.Add(8);  
+            numvPorFace.Add(4);
+
+            indicesFaces.Add(3);  
+            indicesFaces.Add(4);  
+            indicesFaces.Add(10); 
+            indicesFaces.Add(9);  
+            numvPorFace.Add(4);
+
+            indicesFaces.Add(4);  
+            indicesFaces.Add(5);  
+            indicesFaces.Add(11); 
+            indicesFaces.Add(10); 
+            numvPorFace.Add(4);
+
+            indicesFaces.Add(5);  
+            indicesFaces.Add(0);  
+            indicesFaces.Add(6);  
+            indicesFaces.Add(11); 
+            numvPorFace.Add(4);
+
+
         }
 
-        private void Cone(float radius, float height, int numFaces)
+        private void Cone(float raio, float altura, int numFaces)
         {
-            // Base circular
-            vertices.Add(new Vector3D(0, 0, 0)); // Centro da base
+            float anguloCada = (float)(2 * Math.PI / numFaces);
+
+            // vértices da base 
             for (int i = 0; i < numFaces; i++)
             {
-                float angle = (float)(2 * Math.PI / numFaces * i);
-                vertices.Add(new Vector3D(radius * (float)Math.Cos(angle), radius * (float)Math.Sin(angle), 0));
+                float angulo = anguloCada * i;
+                vertices.Add(new Vector3D(raio * (float)Math.Cos(angulo), raio * (float)Math.Sin(angulo), 0));
             }
 
-            // Vértice superior (ápice)
-            vertices.Add(new Vector3D(0, 0, height));
+            // vértice do topo
+            vertices.Add(new Vector3D(0,0, altura));
 
-            // Base
-            for (int i = 1; i <= numFaces; i++)
+            //base
+            for (int i = numFaces - 1; i >= 0; i--) 
             {
-                indicesFaces.Add(0);
                 indicesFaces.Add(i);
-                indicesFaces.Add(i % numFaces + 1);
-                numvPorFace.Add(3);
             }
+            numvPorFace.Add(numFaces);
 
-            // Faces laterais
-            for (int i = 1; i <= numFaces; i++)
+            // Definir as faces laterais
+            for (int i = 0; i < numFaces; i++)
             {
-                indicesFaces.Add(i);
-                indicesFaces.Add(i % numFaces + 1);
-                indicesFaces.Add(numFaces + 1);
+                indicesFaces.Add(i);                  
+                indicesFaces.Add((i + 1) % numFaces); 
+                indicesFaces.Add(numFaces);           
                 numvPorFace.Add(3);
             }
         }
+
+
 
         //kinda default contrutor
         public Objeto(float largura, float altura)

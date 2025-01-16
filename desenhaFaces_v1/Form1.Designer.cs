@@ -78,6 +78,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.esca = new System.Windows.Forms.Label();
             this.escala = new System.Windows.Forms.NumericUpDown();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tb_transx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_transy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_transz)).BeginInit();
@@ -100,7 +101,7 @@
             // 
             this.tb_transx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_transx.Location = new System.Drawing.Point(904, 55);
-            this.tb_transx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_transx.Margin = new System.Windows.Forms.Padding(2);
             this.tb_transx.Maximum = 50;
             this.tb_transx.Minimum = -50;
             this.tb_transx.Name = "tb_transx";
@@ -112,7 +113,7 @@
             // 
             this.tb_transy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_transy.Location = new System.Drawing.Point(904, 101);
-            this.tb_transy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_transy.Margin = new System.Windows.Forms.Padding(2);
             this.tb_transy.Maximum = 50;
             this.tb_transy.Minimum = -50;
             this.tb_transy.Name = "tb_transy";
@@ -124,7 +125,7 @@
             // 
             this.tb_transz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_transz.Location = new System.Drawing.Point(38, 112);
-            this.tb_transz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_transz.Margin = new System.Windows.Forms.Padding(2);
             this.tb_transz.Maximum = 0;
             this.tb_transz.Minimum = -50;
             this.tb_transz.Name = "tb_transz";
@@ -181,7 +182,7 @@
             this.pb_desenho.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pb_desenho.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pb_desenho.Location = new System.Drawing.Point(24, 34);
-            this.pb_desenho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pb_desenho.Margin = new System.Windows.Forms.Padding(2);
             this.pb_desenho.Name = "pb_desenho";
             this.pb_desenho.Size = new System.Drawing.Size(404, 576);
             this.pb_desenho.TabIndex = 0;
@@ -353,6 +354,7 @@
             this.textBoxRaio.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBoxRaio.Name = "textBoxRaio";
             this.textBoxRaio.Size = new System.Drawing.Size(100, 23);
+            this.textBoxRaio.Text = "30";
             // 
             // alturaToolStripMenuItem
             // 
@@ -367,6 +369,7 @@
             this.textBoxAltura.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBoxAltura.Name = "textBoxAltura";
             this.textBoxAltura.Size = new System.Drawing.Size(100, 23);
+            this.textBoxAltura.Text = "90";
             // 
             // facesToolStripMenuItem
             // 
@@ -381,6 +384,7 @@
             this.textBoxFaces.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBoxFaces.Name = "textBoxFaces";
             this.textBoxFaces.Size = new System.Drawing.Size(100, 23);
+            this.textBoxFaces.Text = "8";
             // 
             // prismaPentagonalToolStripMenuItem
             // 
@@ -407,7 +411,7 @@
             // 
             this.Roty_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Roty_tb.Location = new System.Drawing.Point(38, 66);
-            this.Roty_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Roty_tb.Margin = new System.Windows.Forms.Padding(2);
             this.Roty_tb.Maximum = 180;
             this.Roty_tb.Minimum = -180;
             this.Roty_tb.Name = "Roty_tb";
@@ -419,7 +423,7 @@
             // 
             this.Rotx_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Rotx_tb.Location = new System.Drawing.Point(38, 18);
-            this.Rotx_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Rotx_tb.Margin = new System.Windows.Forms.Padding(2);
             this.Rotx_tb.Maximum = 180;
             this.Rotx_tb.Minimum = -180;
             this.Rotx_tb.Name = "Rotx_tb";
@@ -474,7 +478,7 @@
             // 
             this.Rotz_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Rotz_tb.Location = new System.Drawing.Point(38, 110);
-            this.Rotz_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Rotz_tb.Margin = new System.Windows.Forms.Padding(2);
             this.Rotz_tb.Maximum = 180;
             this.Rotz_tb.Minimum = -180;
             this.Rotz_tb.Name = "Rotz_tb";
@@ -564,7 +568,7 @@
             this.pb_desenho2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pb_desenho2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pb_desenho2.Location = new System.Drawing.Point(446, 34);
-            this.pb_desenho2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pb_desenho2.Margin = new System.Windows.Forms.Padding(2);
             this.pb_desenho2.Name = "pb_desenho2";
             this.pb_desenho2.Size = new System.Drawing.Size(404, 576);
             this.pb_desenho2.TabIndex = 22;
@@ -610,7 +614,6 @@
             this.esca.Size = new System.Drawing.Size(39, 13);
             this.esca.TabIndex = 27;
             this.esca.Text = "Escala";
-            this.esca.Click += new System.EventHandler(this.label11_Click);
             // 
             // escala
             // 
@@ -637,11 +640,22 @@
             0});
             this.escala.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button2.Location = new System.Drawing.Point(1043, 606);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(12, 12);
+            this.button2.TabIndex = 28;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 630);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.esca);
             this.Controls.Add(this.escala);
             this.Controls.Add(this.label10);
@@ -667,7 +681,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox2);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(965, 636);
             this.Name = "Form1";
             this.Text = "Desenho de Faces Poligonais";
@@ -747,6 +761,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label esca;
         private System.Windows.Forms.NumericUpDown escala;
+        private System.Windows.Forms.Button button2;
     }
 }
 
