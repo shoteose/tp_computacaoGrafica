@@ -540,6 +540,7 @@ namespace desenhaFaces_v1
                 v.MultiplicaporMatriz_coordHomogeneas(mRotY);
                 v.MultiplicaporMatriz_coordHomogeneas(mRotZ);
                 v.MultiplicaporMatriz_coordHomogeneas(mTrans);
+
                 if (!this.projPerpetiva)
                 {
                     v.MultiplicaporMatriz_coordCartesianas(mProjParalela);

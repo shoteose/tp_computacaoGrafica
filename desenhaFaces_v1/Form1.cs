@@ -68,7 +68,7 @@ namespace desenhaFaces_v1
                 // Desenha com a projeção paralela
                 objClone.Desenha(g, tb_transx.Value, tb_transy.Value, tb_transz.Value, Rotx_tb.Value, Roty_tb.Value, Rotz_tb.Value);
 
-               // dadosObjeto.Text = obj.InformacoesObj();
+                dadosObjetoC.Text = objClone.InformacoesObj();
             }
         }
 
@@ -388,6 +388,11 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
         private void button2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("20 na pauta?");
+        }
+
+        private void escolherObjeto3DToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
