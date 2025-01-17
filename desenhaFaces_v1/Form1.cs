@@ -157,7 +157,7 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
 
             Stream str;
             OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "Text files (*.txt)|*.txt|All files(*.*)|*.*";
+            fileDialog.Filter = "All files(*.*)|*.*|Text files (*.txt)|*.txt";
             fileDialog.RestoreDirectory = true;
 
             if (fileDialog.ShowDialog() == DialogResult.OK)
@@ -173,16 +173,16 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
 
                             if (obj != null)
                             {
-                                // se vamos querer usar o mesmo obj para os dados lidos a partir do ficheiro, temos de remover dos arraylist os dados do objeto anterior
+                               
                                 
                                 obj.GetVertices3D().Clear();
                                 obj.GetIndicesFaces().Clear();
                                 obj.GetNumvPorFace().Clear();
-                                obj.SetObjeto(this.pb_desenho.Width, this.pb_desenho.Height, str, nomeFicheiro); //lê o novo objeto a partir de ficheiro
+                                obj.SetObjeto(this.pb_desenho.Width, this.pb_desenho.Height, str, nomeFicheiro); 
                             }
 
                             
-                            SetCores(); // atualizar a classe objeto com os atributos da pen e brush que foram escolhidos no form
+                            SetCores(); 
                             escala.Value = 1;
 
                             if (cb_wireframe.Checked)
