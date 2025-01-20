@@ -394,5 +394,22 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
         {
 
         }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged_1(object sender, EventArgs e)
+        {
+            if (obj != null)
+            {
+                obj.CoeficienteDifusao((float)coeficienteDif.Value);
+                objClone.CoeficienteDifusao((float)coeficienteDif.Value);
+
+                this.pb_desenho.Invalidate();
+                this.pb_desenho2.Invalidate();
+            }
+        }
     }
 }

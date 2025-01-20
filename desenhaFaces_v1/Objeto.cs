@@ -55,6 +55,8 @@ namespace desenhaFaces_v1
 
         private string nomeObjeto;
 
+        private float coficienteDifusao = 1;
+
         private Stream s; // stream para carregar os dados do ficheiro, no caso da estrutura do objeto ser lida a partir de um ficheiro
 
         private float escalaAtual = 1;
@@ -673,9 +675,15 @@ namespace desenhaFaces_v1
             {
                 Face f = (Face)faces[i];
 
-                float intensidadeLuz = f.CalcularIluminacaoDifusa(posicaoLuz, posicaoCamera);
-                Color corIluminada = Color.FromArgb((int)(brushPreenchimento.Color.R * intensidadeLuz), (int)(brushPreenchimento.Color.G * intensidadeLuz), (int)(brushPreenchimento.Color.B * intensidadeLuz)
-                );
+                float intensidadeLuz = f.CalcularIluminacaoDifusa(posicaoLuz, posicaoCamera,coficienteDifusao);
+                
+                int R = (int)(brushPreenchimento.Color.R * intensidadeLuz);
+                int G = (int)(brushPreenchimento.Color.G * intensidadeLuz);
+                int B = (int)(brushPreenchimento.Color.B * intensidadeLuz);
+                Color corIluminada = Color.FromArgb(
+                    R > 255 ? 255 : R,
+                    G > 255 ? 255 : G,
+                    B > 255 ? 255 :B) ;
 
                 Brush brushIluminada = new SolidBrush(corIluminada);
 
@@ -686,8 +694,6 @@ namespace desenhaFaces_v1
                 }
                 g.DrawPolygon(penContorno, f.GetVertices2D(larguraDesenho, alturaDesenho));
             }
-
-
         }
 
 
@@ -821,7 +827,10 @@ namespace desenhaFaces_v1
         }
 
 
-
+        public void CoeficienteDifusao(float coeficiente)
+        {
+            this.coficienteDifusao = coeficiente;
+        }
 
 
 

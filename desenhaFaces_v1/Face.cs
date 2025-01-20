@@ -77,11 +77,11 @@ namespace desenhaFaces_v1
             return vetor3.z;
         }
 
-        public float CalcularIluminacaoDifusa(Vector3D luz, Vector3D camera)
+        public float CalcularIluminacaoDifusa(Vector3D luz, Vector3D camera, float coficienteDifusao)
         {
             Vector3D normal = getNormal();
             luz.Normalize();
-            float intensidade = Math.Max(0, normal * luz); 
+            float intensidade = Math.Max(0, normal * luz * coficienteDifusao); 
             return intensidade;
         }
 
