@@ -59,6 +59,10 @@ namespace desenhaFaces_v1
 
         private float escalaAtual = 1;
 
+        private Vector3D posicaoLuz = new Vector3D(0, 0, 500); 
+        private Vector3D posicaoCamera = new Vector3D(0, 0, -500);
+
+
         public Objeto()
         {
             InicializaObjeto("cubo");
@@ -668,12 +672,21 @@ namespace desenhaFaces_v1
             for (int i = 0; i < faces.Count; i++)
             {
                 Face f = (Face)faces[i];
+
+                float intensidadeLuz = f.CalcularIluminacaoDifusa(posicaoLuz, posicaoCamera);
+                Color corIluminada = Color.FromArgb((int)(brushPreenchimento.Color.R * intensidadeLuz), (int)(brushPreenchimento.Color.G * intensidadeLuz), (int)(brushPreenchimento.Color.B * intensidadeLuz)
+                );
+
+                Brush brushIluminada = new SolidBrush(corIluminada);
+
+                // Desenhar a face
                 if (!this.wireframe)
                 {
-                    g.FillPolygon(this.brushPreenchimento, f.GetVertices2D(this.larguraDesenho, alturaDesenho)); // se escolheu wireframe não preenche
+                    g.FillPolygon(brushIluminada, f.GetVertices2D(larguraDesenho, alturaDesenho));
                 }
                 g.DrawPolygon(penContorno, f.GetVertices2D(larguraDesenho, alturaDesenho));
             }
+
 
         }
 
