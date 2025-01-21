@@ -183,7 +183,7 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
 
                             
                             SetCores(); 
-                            escala.Value = 1;
+                            escala.Value = 1;  coeficienteDif.Value = 1;
 
                             if (cb_wireframe.Checked)
                             {
@@ -247,7 +247,7 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
 
             this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, this.tipoModelo);
             checkBox2.Checked = false;
-            escala.Value = 1;
+            escala.Value = 1;  coeficienteDif.Value = 1;
             this.pb_desenho.Invalidate(); this.pb_desenho2.Invalidate();
             checkBox2.Checked = false;
 
@@ -260,7 +260,7 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
             this.tipoModelo = "prismaPenta";
 
             this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, this.tipoModelo);
-            escala.Value = 1;
+            escala.Value = 1;  coeficienteDif.Value = 1;
 
             this.pb_desenho.Invalidate(); this.pb_desenho2.Invalidate();
             checkBox2.Checked = false;
@@ -274,7 +274,7 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
             this.tipoModelo = "piramideQuad";
 
             this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, this.tipoModelo);
-            escala.Value = 1;
+            escala.Value = 1;  coeficienteDif.Value = 1;
 
             this.pb_desenho.Invalidate(); this.pb_desenho2.Invalidate();
             checkBox2.Checked = false;
@@ -288,7 +288,7 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
             this.tipoModelo = "piramideHexa";
 
             this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, this.tipoModelo);
-            escala.Value = 1;
+            escala.Value = 1;  coeficienteDif.Value = 1;
 
             this.pb_desenho.Invalidate(); this.pb_desenho2.Invalidate();
             checkBox2.Checked = false;
@@ -309,7 +309,7 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
                 else { 
                     this.tipoModelo = "cone";
                     this.obj = new Objeto(pb_desenho.Width, pb_desenho.Height, textBoxRaio.Text, textBoxAltura.Text, textBoxFaces.Text);
-                    escala.Value = 1;
+                    escala.Value = 1;  coeficienteDif.Value = 1;
 
                     this.pb_desenho.Invalidate(); this.pb_desenho2.Invalidate();
                     checkBox2.Checked = false;
@@ -354,7 +354,7 @@ this.pb_desenho.Invalidate();this.pb_desenho2.Invalidate();
                 Rotx_tb.Value = 0;
                 Roty_tb.Value = 0;
                 Rotz_tb.Value = 0;
-                escala.Value = 1;
+                escala.Value = 1;  coeficienteDif.Value = 1;
 
 
                 //dadosObjeto.Text = "alterie";

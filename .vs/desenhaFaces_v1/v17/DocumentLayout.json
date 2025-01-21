@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|c:\\xampp\\htdocs\\tp_computacaografica\\desenhafaces_v1\\objeto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|solutionrelative:desenhafaces_v1\\objeto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhafaces_v1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|solutionrelative:desenhafaces_v1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhafaces_v1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|solutionrelative:desenhafaces_v1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|c:\\xampp\\htdocs\\tp_computacaografica\\desenhafaces_v1\\objeto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|solutionrelative:desenhafaces_v1\\objeto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhafaces_v1\\face.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|solutionrelative:desenhafaces_v1\\face.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhafaces_v1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2C841B77-591B-4B8D-BA1F-1D88DB428120}|desenhaFaces_v1\\desenhaFaces_v1.csproj|solutionrelative:desenhafaces_v1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Objeto.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Objeto.cs",
               "RelativeDocumentMoniker": "desenhaFaces_v1\\Objeto.cs",
               "ToolTip": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Objeto.cs",
               "RelativeToolTip": "desenhaFaces_v1\\Objeto.cs",
-              "ViewState": "AgIAAJgCAAAAAAAAAAAgwLYCAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAEDAAAAAAAAAAAAACADAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-14T22:17:49.549Z",
               "IsPinned": true,
@@ -44,13 +44,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Face.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Face.cs",
               "RelativeDocumentMoniker": "desenhaFaces_v1\\Face.cs",
               "ToolTip": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Face.cs",
               "RelativeToolTip": "desenhaFaces_v1\\Face.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAuwE4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAowFcAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-17T11:33:43.593Z",
               "IsPinned": true,
@@ -58,20 +58,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Form1.cs",
               "RelativeDocumentMoniker": "desenhaFaces_v1\\Form1.cs",
               "ToolTip": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Form1.cs",
               "RelativeToolTip": "desenhaFaces_v1\\Form1.cs",
-              "ViewState": "AgIAAH0BAAAAAAAAAAAgwJcBAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAIMBAAAAAAAAAADgv5YBAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-16T18:25:30.79Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\xampp\\htdocs\\tp_computacaoGrafica\\desenhaFaces_v1\\Form1.cs",
               "RelativeDocumentMoniker": "desenhaFaces_v1\\Form1.cs",

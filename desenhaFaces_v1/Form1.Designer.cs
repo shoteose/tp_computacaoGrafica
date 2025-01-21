@@ -105,7 +105,7 @@
             // 
             this.tb_transx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_transx.Location = new System.Drawing.Point(904, 55);
-            this.tb_transx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_transx.Margin = new System.Windows.Forms.Padding(2);
             this.tb_transx.Maximum = 50;
             this.tb_transx.Minimum = -50;
             this.tb_transx.Name = "tb_transx";
@@ -117,7 +117,7 @@
             // 
             this.tb_transy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_transy.Location = new System.Drawing.Point(904, 101);
-            this.tb_transy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_transy.Margin = new System.Windows.Forms.Padding(2);
             this.tb_transy.Maximum = 50;
             this.tb_transy.Minimum = -50;
             this.tb_transy.Name = "tb_transy";
@@ -129,7 +129,7 @@
             // 
             this.tb_transz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_transz.Location = new System.Drawing.Point(38, 112);
-            this.tb_transz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_transz.Margin = new System.Windows.Forms.Padding(2);
             this.tb_transz.Maximum = 0;
             this.tb_transz.Minimum = -50;
             this.tb_transz.Name = "tb_transz";
@@ -185,7 +185,7 @@
             this.pb_desenho.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pb_desenho.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pb_desenho.Location = new System.Drawing.Point(24, 34);
-            this.pb_desenho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pb_desenho.Margin = new System.Windows.Forms.Padding(2);
             this.pb_desenho.Name = "pb_desenho";
             this.pb_desenho.Size = new System.Drawing.Size(404, 619);
             this.pb_desenho.TabIndex = 0;
@@ -415,7 +415,7 @@
             // 
             this.Roty_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Roty_tb.Location = new System.Drawing.Point(38, 66);
-            this.Roty_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Roty_tb.Margin = new System.Windows.Forms.Padding(2);
             this.Roty_tb.Maximum = 180;
             this.Roty_tb.Minimum = -180;
             this.Roty_tb.Name = "Roty_tb";
@@ -427,7 +427,7 @@
             // 
             this.Rotx_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Rotx_tb.Location = new System.Drawing.Point(38, 18);
-            this.Rotx_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Rotx_tb.Margin = new System.Windows.Forms.Padding(2);
             this.Rotx_tb.Maximum = 180;
             this.Rotx_tb.Minimum = -180;
             this.Rotx_tb.Name = "Rotx_tb";
@@ -482,7 +482,7 @@
             // 
             this.Rotz_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Rotz_tb.Location = new System.Drawing.Point(38, 110);
-            this.Rotz_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Rotz_tb.Margin = new System.Windows.Forms.Padding(2);
             this.Rotz_tb.Maximum = 180;
             this.Rotz_tb.Minimum = -180;
             this.Rotz_tb.Name = "Rotz_tb";
@@ -571,7 +571,7 @@
             this.pb_desenho2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pb_desenho2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pb_desenho2.Location = new System.Drawing.Point(446, 34);
-            this.pb_desenho2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pb_desenho2.Margin = new System.Windows.Forms.Padding(2);
             this.pb_desenho2.Name = "pb_desenho2";
             this.pb_desenho2.Size = new System.Drawing.Size(404, 619);
             this.pb_desenho2.TabIndex = 22;
@@ -685,10 +685,10 @@
             65536});
             this.coeficienteDif.Location = new System.Drawing.Point(1004, 574);
             this.coeficienteDif.Maximum = new decimal(new int[] {
-            13,
+            2,
             0,
             0,
-            65536});
+            0});
             this.coeficienteDif.Minimum = new decimal(new int[] {
             1,
             0,
@@ -738,7 +738,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox2);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(965, 635);
             this.Name = "Form1";
             this.Text = "Desenho de Faces Poligonais";

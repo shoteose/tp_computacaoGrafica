@@ -81,8 +81,8 @@ namespace desenhaFaces_v1
         {
             Vector3D normal = getNormal();
             luz.Normalize();
-            float intensidade = Math.Max(0, normal * luz * coficienteDifusao); 
-            return intensidade;
+            float intensidade = normal * luz * coficienteDifusao; 
+            return intensidade > 0 ? intensidade : 0;
         }
 
         private Vector3D getNormal()
